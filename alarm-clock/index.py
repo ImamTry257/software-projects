@@ -4,8 +4,9 @@ import time
 import winsound
 
 def alarm(set_alarm_timer):
-    time.sleep(1)
-    while True:
+    is_time = False
+    while is_time == False:
+        time.sleep(1)
         current_time = datetime.datetime.now()
         now = current_time.strftime("%H:%M:%S")
         date = current_time.strftime("%d/%m/%Y")
@@ -16,10 +17,10 @@ def alarm(set_alarm_timer):
 
         # check
         if now == set_alarm_timer:
+            is_time = True
             print("Time to Wake Up")
-        winsound.PlaySound('sound.wav', winsound.SND_ASYNC)
+            winsound.PlaySound('sound.wav', winsound.SND_ASYNC)
         
-        break
 
 def actual_time():
     set_alarm_timer = f"{hour.get()}:{min.get()}:{sec.get()}"
