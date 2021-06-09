@@ -4,7 +4,8 @@ import pymysql
 from tkinter import messagebox
 from AddBook import *
 from ViewBooks import *
-
+from DeleteBook import *
+from IssueBook import *
 
 # connect to db
 pwd = ''
@@ -29,13 +30,13 @@ headingLabel.place(relx=0, rely=0, relheight=1, relwidth=1)
 btnA = Button(root, text="Add Book", bg='black', fg='white', command=addBook)
 btnA.place(relx=0.1, rely=0.4, relwidth=0.4, relheight=0.1)
 
-btnB = Button(root, text="Delete Book", bg='black', fg='white')
+btnB = Button(root, text="Delete Book", bg='black', fg='white', command=delete)
 btnB.place(relx=0.1, rely=0.5, relwidth=0.4, relheight=0.1)
 
 btnC = Button(root, text="View Book List", bg='black', fg='white', command=view)
 btnC.place(relx=0.1, rely=0.6, relwidth=0.4, relheight=0.1)
 
-btnD = Button(root, text="Issue Book to Student", bg='black', fg='white')
+btnD = Button(root, text="Issue Book to Student", bg='black', fg='white', command=issueBook)
 btnD.place(relx=0.1, rely=0.7, relwidth=0.4, relheight=0.1)
 
 root.mainloop()
